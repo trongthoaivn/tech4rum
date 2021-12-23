@@ -17,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Admin
+
+Route :: get('get-all-admin' , 'App\Http\Controllers\Api\AdminApiController@getAllAdmin');
+
+Route :: get('get-admin-by-id/{id}' , 'App\Http\Controllers\Api\AdminApiController@getAdminById');
+
+Route :: put('update-admin/{id}' , 'App\Http\Controllers\Api\AdminApiController@updateAdmin');
+
+Route :: post('create-admin' , 'App\Http\Controllers\Api\AdminApiController@createAdmin');
+
+Route :: delete('delete-admin/{id}' , 'App\Http\Controllers\Api\AdminApiController@deleteAdmin');
+

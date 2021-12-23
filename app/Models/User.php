@@ -2,43 +2,62 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+/**
+ * @property int $id_user
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ * @property string $phone
+ * @property int $score
+ * @property Comment[] $comments
+ * @property Reply[] $replies
+ * @property Topic[] $topics
+ */
+class User extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    public $timestamps = false;
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'user';
 
     /**
-     * The attributes that are mass assignable.
+     * The primary key for the model.
      *
-     * @var array<int, string>
+     * @var string
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $primaryKey = 'id_user';
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
+     * @var array
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $fillable = ['username', 'password', 'email', 'phone', 'score'];
 
     /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function comments()
+    {
+        return $this->hasMany('App\Comment', 'id_user', 'id_user');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies()
+    {
+        return $this->hasMany('App\Reply', 'id_user', 'id_user');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function topics()
+    {
+        return $this->hasMany('App\Topic', 'id_user', 'id_user');
+    }
 }
