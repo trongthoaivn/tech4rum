@@ -31,3 +31,5 @@ Route :: post('create-admin' , 'App\Http\Controllers\Api\AdminApiController@crea
 Route :: delete('delete-admin/{id}' , 'App\Http\Controllers\Api\AdminApiController@deleteAdmin');
 
 //User
+
+Route :: get('get-all-user', 'App\Http\Controllers\Api\UserApiController@getAllUser');
