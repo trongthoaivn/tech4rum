@@ -31,7 +31,11 @@ Route :: post('create-admin' , 'App\Http\Controllers\Api\AdminApiController@crea
 Route :: delete('delete-admin/{id}' , 'App\Http\Controllers\Api\AdminApiController@deleteAdmin');
 
 //User
+
+Route :: get('get-all-user', 'App\Http\Controllers\Api\UserApiController@getAllUser');
+
 //Category topic
+
 Route :: get('get-all-category-topic' , 'App\Http\Controllers\Api\CategoryTopicApiController@getAllCategoryTopic');
 
 Route :: get('get-category-topic-by-id/{id}' , 'App\Http\Controllers\Api\CategoryTopicApiController@getCategoryTopicById');
@@ -54,6 +58,7 @@ Route :: post('create-category' , 'App\Http\Controllers\Api\CategoryApiControlle
 
 Route :: delete('delete-category/{id}' , 'App\Http\Controllers\Api\CategoryApiController@deleteCategory');
 
+
 //Topic
 
 Route :: get('get-all-topic' , 'App\Http\Controllers\Api\TopicApiController@getAllTopic');
@@ -69,3 +74,5 @@ Route :: put('update-topic/{id}' , 'App\Http\Controllers\Api\TopicApiController@
 Route :: post('create-topic' , 'App\Http\Controllers\Api\TopicApiController@createTopic');
 
 Route ::delete( 'delete-topic/{id}' , 'App\Http\Controllers\Api\TopicApiController@deleteTopic');
+
+
