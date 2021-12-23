@@ -59,3 +59,20 @@ Route :: post('create-category' , 'App\Http\Controllers\Api\CategoryApiControlle
 Route :: delete('delete-category/{id}' , 'App\Http\Controllers\Api\CategoryApiController@deleteCategory');
 
 
+//Topic
+
+Route :: get('get-all-topic' , 'App\Http\Controllers\Api\TopicApiController@getAllTopic');
+
+Route :: get('get-topic-by-id/{id}' , 'App\Http\Controllers\Api\TopicApiController@getTopicById');
+
+Route :: get('get-topic-by-id-category/{id}' , 'App\Http\Controllers\Api\TopicApiController@getTopicByIdCategory');
+
+Route :: get('get-topic-by-id-user/{id}' , 'App\Http\Controllers\Api\TopicApiController@getTopicByIdUser');
+
+Route :: put('update-topic/{id}' , 'App\Http\Controllers\Api\TopicApiController@updateTopic');
+
+Route :: post('create-topic' , 'App\Http\Controllers\Api\TopicApiController@createTopic');
+
+Route ::delete( 'delete-topic/{id}' , 'App\Http\Controllers\Api\TopicApiController@deleteTopic');
+
+
