@@ -34,5 +34,31 @@ Route :: delete('delete-admin/{id}' , 'App\Http\Controllers\Api\AdminApiControll
 
 Route :: get('get-all-user', 'App\Http\Controllers\Api\UserApiController@getAllUser');
 
+Route :: get('get-user-by-id/{id}' , 'App\Http\Controllers\Api\UserApiController@getUserById');
+
+Route :: put('update-user/{id}' , 'App\Http\Controllers\Api\UserApiController@updateUser');
+
+Route :: post('create-user' , 'App\Http\Controllers\Api\UserApiController@createUser');
+
 //Category topic
 
+
+//Reply
+
+Route :: get('get-reply-by-userid/{id}' , 'App\Http\Controllers\Api\ReplyApiController@getReplyByUserId');
+
+Route :: get('get-reply-by-commentid/{id}' , 'App\Http\Controllers\Api\ReplyApiController@getReplyByCommentId');
+
+Route :: put('edit-reply/{id}' , 'App\Http\Controllers\Api\ReplyApiController@EditReply');
+
+Route :: post('new-reply' , 'App\Http\Controllers\Api\ReplyApiController@NewReply');
+
+//Comment
+
+Route :: get('get-comment-by-userid/{id}' , 'App\Http\Controllers\Api\CommentApiController@getCommentByUserId');
+
+Route :: get('get-comment-by-topicid/{id}' , 'App\Http\Controllers\Api\CommentApiController@getCommentByTopicId');
+
+Route :: put('edit-comment/{id}' , 'App\Http\Controllers\Api\CommentApiController@EditComment');
+
+Route :: post('new-comment' , 'App\Http\Controllers\Api\CommentApiController@NewComment');
