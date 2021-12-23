@@ -33,3 +33,6 @@ Route :: delete('delete-admin/{id}' , 'App\Http\Controllers\Api\AdminApiControll
 //User
 
 Route :: get('get-all-user', 'App\Http\Controllers\Api\UserApiController@getAllUser');
+
+//Category topic
+
