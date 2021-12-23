@@ -32,3 +32,25 @@ Route :: delete('delete-admin/{id}' , 'App\Http\Controllers\Api\AdminApiControll
 
 //User
 //Category topic
+Route :: get('get-all-category-topic' , 'App\Http\Controllers\Api\CategoryTopicApiController@getAllCategoryTopic');
+
+Route :: get('get-category-topic-by-id/{id}' , 'App\Http\Controllers\Api\CategoryTopicApiController@getCategoryTopicById');
+
+Route :: put('update-category-topic/{id}' , 'App\Http\Controllers\Api\CategoryTopicApiController@updateCategoryTopic');
+
+Route :: post('create-category-topic' , 'App\Http\Controllers\Api\CategoryTopicApiController@createCategoryTopic');
+
+Route :: delete('delete-category-topic/{id}' , 'App\Http\Controllers\Api\CategoryTopicApiController@deleteCategoryTopic');
+
+//Category
+
+Route :: get('get-all-category' , 'App\Http\Controllers\Api\CategoryApiController@getAllCategory');
+
+Route :: get('get-category-by-id/{id}' , 'App\Http\Controllers\Api\CategoryApiController@getCategoryById');
+
+Route :: put('update-category/{id}' , 'App\Http\Controllers\Api\CategoryApiController@updateCategory');
+
+Route :: post('create-category' , 'App\Http\Controllers\Api\CategoryApiController@createCategory');
+
+Route :: delete('delete-category/{id}' , 'App\Http\Controllers\Api\CategoryApiController@deleteCategory');
+
