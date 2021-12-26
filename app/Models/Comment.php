@@ -33,7 +33,7 @@ class Comment extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id_topic', 'id_user', 'comment'];
+    protected $fillable = ['id_topic', 'id_user', 'comment','date'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -48,7 +48,7 @@ class Comment extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User', 'id_user', 'id_user');
+        return $this->belongsTo('App\Models\User', 'id_user', 'id_user');
     }
 
     /**
@@ -56,6 +56,6 @@ class Comment extends Model
      */
     public function replies()
     {
-        return $this->hasMany('App\Reply', 'id_comment', 'id_comment');
+        return $this->hasMany('App\Models\Reply', 'id_comment', 'id_comment');
     }
 }

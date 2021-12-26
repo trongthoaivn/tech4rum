@@ -76,3 +76,16 @@ Route :: post('create-topic' , 'App\Http\Controllers\Api\TopicApiController@crea
 Route ::delete( 'delete-topic/{id}' , 'App\Http\Controllers\Api\TopicApiController@deleteTopic');
 
 
+//ImageTopic
+
+Route :: get('get-all-image-topic' , 'App\Http\Controllers\Api\ImageTopicApiController@getAllImageTopic');
+
+Route :: get('get-image-topic-by-id/{id}' , 'App\Http\Controllers\Api\ImageTopicApiController@getImageTopicById');
+
+Route :: get ('get-image-topic-by-id-topic/{id}' , 'App\Http\Controllers\Api\ImageTopicApiController@getImageTopicByIdTopic');
+
+Route :: put('update-image-topic/{id}' , 'App\Http\Controllers\Api\ImageTopicApiController@updateImageTopic');
+
+Route :: post('create-image-topic' , 'App\Http\Controllers\Api\ImageTopicApiController@createImageTopic');
+
+Route :: delete('delete-image-topic/{id}' , 'App\Http\Controllers\Api\ImageTopicApiController@deleteImageTopic');

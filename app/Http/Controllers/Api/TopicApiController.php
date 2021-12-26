@@ -41,6 +41,11 @@ class TopicApiController extends Controller
         if(Topic :: where('id_category', $id)->count() > 0)
         {
             $topic = Topic :: where('id_category', $id)->get();
+            // $viewdata = array();
+            // foreach ($topic as $item)
+            // {
+            //     array_push($viewdata, new TopicReviewViewModel($item));
+            // }
             return response()->json($topic, 200);
         }
         else
