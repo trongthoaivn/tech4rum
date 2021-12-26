@@ -8,25 +8,20 @@ use App\Models\Topic;
 
 class TopicReviewViewModel extends Model
 {
-   protected $fillable = [
-        'id_topic',
-        'user_name',
-        'name_category',
-        'title',
-        'content',
-        'date',
-    ];
+    public $id_topic;
+    public $user_name;
+    public $name_category;
+    public $title;
+    public $content;
+    public $date;
 
-    public function toTopicReviewViewModel(Topic $topic)
+    public function __construct(Topic $topic)
     {
-        $viewModel = new TopicReviewViewModel();
-        $viewModel->id_topic = $topic->id_topic;
-        $viewModel->user_name = $topic->user->name;
-        $viewModel->name_category = $topic->category;
-        $viewModel->title = $topic->title;
-        $viewModel->content = $topic->content;
-        $viewModel->date = $topic->date;
-        return $viewModel;
+        $this->id_topic = $topic->id_topic;
+        $this->user_name = $topic->user()->first()->username;
+        $this->name_category = $topic->category()->first()->name_category;
+        $this->title = $topic->title;
+        $this->content = $topic->content;
+        $this->date = $topic->date;
     }
-
 }

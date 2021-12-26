@@ -32,14 +32,14 @@ class Reply extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id_comment', 'id_user', 'reply'];
+    protected $fillable = ['id_comment', 'id_user', 'reply','date'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function comment()
     {
-        return $this->belongsTo('App\Comment', 'id_comment', 'id_comment');
+        return $this->belongsTo('App\Models\Comment', 'id_comment', 'id_comment');
     }
 
     /**
@@ -47,6 +47,6 @@ class Reply extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User', 'id_user', 'id_user');
+        return $this->belongsTo('App\Models\User', 'id_user', 'id_user');
     }
 }

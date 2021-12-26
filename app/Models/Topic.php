@@ -42,7 +42,7 @@ class Topic extends Model
      */
     public function category()
     {
-        return $this->belongsTo('App\Category', 'id_category', 'id_category');
+        return $this->belongsTo('App\Models\Category', 'id_category', 'id_category');
     }
 
     /**
@@ -50,6 +50,6 @@ class Topic extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User', 'id_user', 'id_user');
+        return $this->belongsTo('App\Models\User', 'id_user', 'id_user');
     }
 }

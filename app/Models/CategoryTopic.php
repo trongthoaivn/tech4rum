@@ -36,6 +36,6 @@ class CategoryTopic extends Model
      */
     public function categories()
     {
-        return $this->hasMany('App\Category', 'id_category_topic', 'id_category_topic');
+        return $this->hasMany('App\Models\Category', 'id_category_topic', 'id_category_topic');
     }
 }
