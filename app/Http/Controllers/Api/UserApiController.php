@@ -43,4 +43,19 @@ class UserApiController extends Controller
         }
     }
 
+    public function createUser(Request $request){
+        $data = $request->all();
+        $user = new User();
+        $user -> username = $data['username'];
+        $user -> password = $data['password'];
+        $user -> email = $data['email'];
+        $user -> phone = $data['phone'];
+        $user -> score = $data['score'];
+        if($user -> save()){
+            return response()-> json('Create success', 200);
+        }else{
+            return response()-> json('Create failed', 200);
+        }
+    }
+
 }
