@@ -37,6 +37,6 @@ class ImageTopic extends Model
      */
     public function topic()
     {
-        return $this->belongsTo('App\Topic', 'id_topic', 'id_topic');
+        return $this->belongsTo('App\Models\Topic', 'id_topic', 'id_topic');
     }
 }

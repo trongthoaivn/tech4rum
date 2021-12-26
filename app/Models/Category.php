@@ -38,7 +38,7 @@ class Category extends Model
      */
     public function categoryTopic()
     {
-        return $this->belongsTo('App\CategoryTopic', 'id_category_topic', 'id_category_topic');
+        return $this->belongsTo('App\Models\CategoryTopic', 'id_category_topic', 'id_category_topic');
     }
 
     /**
@@ -46,6 +46,6 @@ class Category extends Model
      */
     public function topics()
     {
-        return $this->hasMany('App\Topic', 'id_category', 'id_category');
+        return $this->hasMany('App\Models\Topic', 'id_category', 'id_category');
     }
 }

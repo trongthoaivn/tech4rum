@@ -42,7 +42,7 @@ class User extends Model
      */
     public function comments()
     {
-        return $this->hasMany('App\Comment', 'id_user', 'id_user');
+        return $this->hasMany('App\Models\Comment', 'id_user', 'id_user');
     }
 
     /**
@@ -50,7 +50,7 @@ class User extends Model
      */
     public function replies()
     {
-        return $this->hasMany('App\Reply', 'id_user', 'id_user');
+        return $this->hasMany('App\Models\Reply', 'id_user', 'id_user');
     }
 
     /**
@@ -58,6 +58,6 @@ class User extends Model
      */
     public function topics()
     {
-        return $this->hasMany('App\Topic', 'id_user', 'id_user');
+        return $this->hasMany('App\Models\Topic', 'id_user', 'id_user');
     }
 }
